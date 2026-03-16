@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
 from dotenv import load_dotenv
 load_dotenv()
-class Settings(BaseSettings):
+class TrainerSettings(BaseSettings):
     model_config  = SettingsConfigDict(
         extra="ignore",
         case_sensitive=False
@@ -11,3 +11,6 @@ class Settings(BaseSettings):
     train_spilt: str = Field(default="train")
     test_split: str = Field(default="test")
     hf_model_name: str = Field(default="none")
+
+
+settings = TrainerSettings()
