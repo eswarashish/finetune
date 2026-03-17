@@ -1,6 +1,5 @@
-def main():
-    print("Hello from finetune!")
+from src.scripts.sft import trainersft
 
 
 if __name__ == "__main__":
-    main()
+    trainersft()
