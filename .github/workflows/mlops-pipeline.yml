@@ -12,5 +12,5 @@ jobs:
           run: |
                 curl -LsSf https://astral.sh/uv/install.sh | sh
                 uv add --dev ruff
-                ruff check .
+                uv run ruff check .
 
