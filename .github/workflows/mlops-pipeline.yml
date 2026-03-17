@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+name: Finetune Mlops pipeline
+on: 
+    push:
+        branches: [main]
+jobs:
+    quality-check:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - name: Install uv & lint
+          run: |
+                curl -LsSf https://astral.sh/uv/install.sh | sh
+                uv run ruff check .
+
