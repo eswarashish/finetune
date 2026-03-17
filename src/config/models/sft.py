@@ -22,5 +22,6 @@ sft_config = SFTConfig(
     num_train_epochs=1,
     logging_steps=1,
     report_to="mlflow",
+    lr_scheduler_type=SchedulerType.REDUCE_ON_PLATEAU
 
 )
