@@ -14,4 +14,19 @@ services:
       --backend-store-uri sqlite:///mlflow.db 
       --default-artifact-root mlflow-artifacts:/   
       --serve-artifacts
+      --allowed-hosts "*"
 
+  trainer:
+    build:
+      context: .
+      dockerfile: src/docker/Dockerfile
+    container_name: sft_trainer
+    volumes:
+      - ./data:/app/data
+      - ./outputs:/app/outputs
+    env_file:
+      - ./src/.env
+    depends_on:
+      - mlflow
+
+      

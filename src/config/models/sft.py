@@ -7,13 +7,12 @@ current_file = Path(__file__).resolve()
 src_dir = current_file.parent.parent.parent
 
 sft_config = SFTConfig(
-    output_dir=f'{src_dir}/outputs',
+    output_dir="./outputs",
     max_length=512,
     dataset_text_field="text",
     packing=True,
-    
-   
-    bf16=False,          
+    use_cpu=True,
+         
     fp16=True,           
     dataloader_pin_memory=False, 
 
@@ -24,8 +23,4 @@ sft_config = SFTConfig(
     logging_steps=1,
     report_to="mlflow",
 
-)
-sft_config = SFTConfig(
-    output_dir="./outputs",
-    
 )
