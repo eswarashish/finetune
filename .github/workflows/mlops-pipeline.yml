@@ -11,5 +11,6 @@ jobs:
         - name: Install uv & lint
           run: |
                 curl -LsSf https://astral.sh/uv/install.sh | sh
-                uv run ruff check .
+                uv add --dev ruff
+                ruff check .
 
