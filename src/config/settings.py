@@ -11,6 +11,8 @@ class TrainerSettings(BaseSettings):
     train_spilt: str = Field(default="train")
     test_split: str = Field(default="test")
     hf_model_name: str = Field(default="none")
+    mlflow_uri: str = Field(default=" ")
+    mlflow_experimet: str = Field(default="news_summary")
 
 
 settings = TrainerSettings()

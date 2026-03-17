@@ -6,7 +6,6 @@ lora_config = LoraConfig(
     bias="none",
     target_modules=[     # Targeting all projections for maximum performance
         "q_proj", "k_proj", "v_proj", "o_proj",
-        "gate_proj", "up_proj", "down_proj",
     ],
     lora_bias=False,
     lora_dropout=0.05,
